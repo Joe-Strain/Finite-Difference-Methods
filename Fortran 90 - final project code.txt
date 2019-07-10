@@ -12,20 +12,22 @@ REAL :: dy, tt, yr
 INTEGER, PARAMETER :: ny=41, nt=540, save_iter=1
 INTEGER :: n
 REAL, DIMENSION(ny) :: yy, uu
-CHARACTER  (LEN=*), PARAMETER :: fname=”data/ftcs.dat”
+CHARACTER(LEN=*), PARAMETER :: fname=”data/ftcs.dat”
 
 ! *** Set up values needed
-tt=0 
-yr=ymax−ymin
+tt = 0 
+yr = ymax − ymin
 
 ! *** Create yy and give it values
 DO n=1, ny
-yy(n)=yr*( n−1)
+yy(n) = yr * (n−1)
 END DO
-yy=yy / ( ny−1)+ymin dy=yy ( 2 )−yy ( 1 )
+yy = yy / (ny−1) + ymin
+dy = yy(2) − yy(1)
+
 ! *** Intial Conditions 
-uu(1)=inuu
-uu(2:ny)=0
+uu(1) = inuu
+uu(2:ny) = 0
 
 ! *** Perform FTCS and save to ’fname’
 OPEN(UNIT=1,FILE=fname,FORM=”UNFORMATTED”,STATUS=”REPLACE”,ACTION=”WRITE”)
@@ -36,7 +38,7 @@ DO n=1, nt
 
 CALL timestep(uu,dt,alpha,dy,ny) 
 
-tt=tt+dt
+tt = tt + dt
 
 IF (MOD(n,save_iter)==0) THEN
 WRITE(UNIT=1) uu, tt
