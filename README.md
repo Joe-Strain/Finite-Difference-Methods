@@ -1,2 +1,2 @@
 # Fortran90
-Old Fortran90 code
+Old Fortran90 code used for numerically solving the parallel plate problem. Four numerical methods were investigated into the accuracy and efficiency of modelling the parallel plate problem. All methods, in essence, numerically solve parabolic partial differential equations.
