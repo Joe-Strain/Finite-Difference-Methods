@@ -8,5 +8,5 @@ FTCS (Forward-Time Central-Space),
 Laasonen Method (aka BTCS Backward-Time Central-Space)
 
 
-The four mehtod files: crank.f90, dufort.f90, ftcs.f90, laas.f90
-Module containing subroutines: fin_diff
+The four mehtod files: crank.f90, dufort.f90, ftcs.f90, laas.f90 \n
+Module containing subroutines: fin_diff.f90
